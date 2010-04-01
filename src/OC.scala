@@ -7,6 +7,7 @@ import org.eclipse.swt.layout._
 import org.eclipse.swt.widgets._
 import org.eclipse.jface.window._
 import org.eclipse.jface.viewers._
+import org.eclipse.jface.dialogs._
 
 case class MI1(title: String, action: Unit => Unit, children: scala.List[MI1]) { }
 object MI1 {
@@ -55,6 +56,11 @@ object OC {
     addMenuBar()
     def openAboutBox = {
       println ("foo")
+      var buttons: Array[String] = new Array[String](1)
+      buttons(0) = IDialogConstants.OK_LABEL
+      var vv = new MessageDialog(this.getShell(), "About sOC", null, "About this thing: ...", MessageDialog.QUESTION, buttons, 0)
+      vv.open()
+      null
     }
     protected override def createMenuManager() : MenuManager = {
       var menu = MB(
@@ -69,11 +75,11 @@ object OC {
       menu
     }
     protected override def createContents(parent: Composite) : Control = {
-      parent.setLayout(new GridLayout())
-      //var ctabf = new CTabFolder(parent, SWT.BORDER);
-      var j = new CTabFolder(parent, SWT.MULTI)
-      for(i<- 1 to 8) {
-        j = new CTabFolder(parent, SWT.CLOSE)
+      var layout = new GridLayout()
+      layout.numColumns = 3
+      parent.setLayout(layout)
+      for(i<- 1 to 9) {
+        var j = new CTabFolder(parent, SWT.CLOSE | SWT.BORDER | SWT.MULTI)
         var k = new CTabItem(j, SWT.CLOSE | SWT.MULTI)
         k.setText(i.toString())
         var foo = new org.eclipse.swt.widgets.Text(j, SWT.BORDER|SWT.MULTI)
