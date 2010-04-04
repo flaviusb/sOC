@@ -21,10 +21,12 @@ case class MI2(parent: MenuManager, title: String, children: scala.List[MI1]) {
     if (x.children.length == 0) { 
       var menuitem = new Actioned(x.action)
       menuitem.setText(TranslationData.translations(x.title)(TranslationData.currlang))
+      TranslationData.translateCallback((y: String) => {menuitem.setText(TranslationData.translations(x.title)(y)); null })
       parent.add(menuitem)
     } else {
       var menu = new MenuManager(TranslationData.translations(x.title)(TranslationData.currlang));
       MI2(menu, TranslationData.translations(x.title)(TranslationData.currlang), x.children)
+      TranslationData.translateCallback((y: String) => {menu.getMenu().getParentItem().setText(TranslationData.translations(x.title)(y)); null })
       parent.add(menu)
     }
   })
@@ -36,10 +38,12 @@ case class MB(children: scala.List[MI1]) {
     if (x.children.length == 0) { 
       var menuitem = new Actioned(null)
       menuitem.setText(TranslationData.translations(x.title)(TranslationData.currlang))
+      TranslationData.translateCallback((y: String) => {menuitem.setText(TranslationData.translations(x.title)(y)); null })
       me.add(menuitem)
     } else {
       var menu = new MenuManager(TranslationData.translations(x.title)(TranslationData.currlang));
       MI2(menu, TranslationData.translations(x.title)(TranslationData.currlang), x.children)
+      TranslationData.translateCallback((y: String) => {menu.getMenu().getParentItem().setText(TranslationData.translations(x.title)(y)); null })
       me.add(menu)
     }
   })
@@ -54,7 +58,6 @@ class Actioned(toRun: Unit => Unit) extends Action {
 
 object OC {
   class sOCWindow extends ApplicationWindow(null) {
-    import TranslationData._
     implicit def MI12List(a: MI1) : scala.List[MI1] = { a :: Nil }
     addMenuBar()
     def openAboutBox = {
@@ -73,6 +76,10 @@ object OC {
         ) ::
         MI1("Edit", Nil) ::
         MI1("View", Nil) ::
+        MI1("Tools", 
+          MI1("Language", 
+            MI1("English", Unit => { TranslationData.currlang = "en"; TranslationData.callcallbacks }, Nil) ::
+            MI1("French" , Unit => { TranslationData.currlang = "fr"; TranslationData.callcallbacks } , Nil))) ::
         MI1("Help", MI1("About", Unit => openAboutBox , Nil))
       ).me
       menu

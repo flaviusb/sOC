@@ -197,6 +197,8 @@ object TranslationData {
  )      
 
   var currlang = "en"
-  //def callbackize()  
+  var calls: List[String => Unit] = List[String => Unit]()
+  def translateCallback(call: String => Unit) = { calls = calls.:::(List(call)) }
+  def callcallbacks = { for(call <- calls) call(currlang) }
 }
 
