@@ -65,7 +65,7 @@ object OC {
       buttons(0) = IDialogConstants.OK_LABEL
       var vv = new MessageDialog(this.getShell(), "About sOC", null, "About this thing: ...", MessageDialog.QUESTION, buttons, 0)
       vv.open()
-      null
+      null 
     }
     protected override def createMenuManager() : MenuManager = {
       var menu = MB(
@@ -90,6 +90,8 @@ object OC {
       menu
     }
     protected override def createContents(parent: Composite) : Control = {
+      getShell().setText(TranslationData.translations("OpenCell")(TranslationData.currlang))
+      TranslationData.translateCallback((y: String) => {this.getShell().setText(TranslationData.translations("OpenCell")(y)); null })
       var layout = new GridLayout()
       layout.numColumns = 3
       parent.setLayout(layout)
