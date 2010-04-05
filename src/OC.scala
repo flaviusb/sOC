@@ -72,11 +72,16 @@ object OC {
         MI1("File", 
           MI1("New", Unit => println("New Model not implemented") , Nil) ::
           MI1("Open...", Unit => println("Open Model not implemented") , Nil) ::
+          MI1("Save", Unit => println("Save Model not implemented") , Nil) ::
+          MI1("Save As...", Unit => println("Save As not implemented") , Nil) ::
+          MI1("Save All", Unit => println("Save All not implemented") , Nil) ::
           MI1("Exit", Unit => close() , Nil)
         ) ::
-        MI1("Edit", Nil) ::
+        MI1("Edit",
+          MI1("Select All", Unit => println("Select All not implemented") , Nil)
+        ) ::
         MI1("View", Nil) ::
-        MI1("Tools", 
+        MI1("Tools",
           MI1("Language", 
             MI1("English", Unit => { TranslationData.currlang = "en"; TranslationData.callcallbacks }, Nil) ::
             MI1("French" , Unit => { TranslationData.currlang = "fr"; TranslationData.callcallbacks } , Nil))) ::
