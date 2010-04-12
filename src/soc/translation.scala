@@ -1,3 +1,5 @@
+package soc;
+
 import scala.collection.mutable.{Map => MMap}
 
 object TranslationData {
@@ -12,10 +14,10 @@ object TranslationData {
  ("Help" -> Seq(("en" -> "Help"), ("fr" -> "?"))),                                                                                                                    
  ("Tools" -> Seq(("en" -> "Tools"), ("fr" -> "Outils"))),                                                                                                             
  ("Language" -> Seq(("en" -> "Language"), ("fr" -> "Langage"))),                                                                                                      
- ("File" -> Seq(("en" -> "File"), ("fr" -> "Fichier"))),                                                                                                              
+ ("File" -> Seq(("en" -> "&File"), ("fr" -> "&Fichier"))),                                                                                                              
  ("New" -> Seq(("en" -> "New"), ("fr" -> "Nouveau"))),                                                                                                                
  ("Export To" -> Seq(("en" -> "Export To"), ("fr" -> "Exporter Vers"))),                                                                                              
- ("Edit" -> Seq(("en" -> "Edit"), ("fr" -> "Editer"))),                                                                                                               
+ ("Edit" -> Seq(("en" -> "&Edit"), ("fr" -> "&Editer"))),                                                                                                               
  ("View" -> Seq(("en" -> "View"), ("fr" -> "Voir"))),                                                                                                                 
  ("Toolbars" -> Seq(("en" -> "Toolbars"), ("fr" -> "Barres d"))),                                                                                                     
  ("Run" -> Seq(("en" -> "Run"), ("fr" -> "Exécuter"))),                                                                                                               
@@ -42,7 +44,8 @@ object TranslationData {
  ("Select English as the language used by OpenCell" -> Seq(("en" -> "Select English as the language used by OpenCell"), ("fr" -> "Sélectionner l"))),                 
  ("French" -> Seq(("en" -> "French"), ("fr" -> "Français"))),                                                                                                         
  ("Select French as the language used by OpenCell" -> Seq(("en" -> "Select French as the language used by OpenCell"), ("fr" -> "Sélectionner le français comme langue utilisée par OpenCell"))),                                                                                                                                            
- ("Exit" -> Seq(("en" -> "Exit"), ("fr" -> "Quitter"))),                                                                                                              
+ ("Exit" -> Seq(("en" -> "E&xit"), ("fr" -> "&Quitter"))),                                                                                                              
+ ("E&xit" -> Seq(("en" -> "E&xit"), ("fr" -> "&Quitter"))),                                                                                                              
  ("Exit OpenCell" -> Seq(("en" -> "Exit OpenCell"), ("fr" -> "Quitter OpenCell"))),                                                                                   
  ("Ctrl+Q" -> Seq(("en" -> "Ctrl+Q"), ("fr" -> ""))),                                                                                                                 
  ("CellML 1.0 File" -> Seq(("en" -> "CellML 1.0 File"), ("fr" -> "Fichier CellML 1.0"))),                                                                             
