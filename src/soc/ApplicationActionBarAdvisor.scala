@@ -77,26 +77,6 @@ class ApplicationActionBarAdvisor(configurer: IActionBarConfigurer) extends Acti
           MI1("French" , Unit => { TranslationData.currlang = "fr"; TranslationData.callcallbacks } , Nil))) ::
       MI1("Help", IWorkbenchActionConstants.M_HELP, MI1(aboutAction))
       ) 
-      /*
-        var fileMenu: MenuManager = new MenuManager("&File", IWorkbenchActionConstants.M_FILE);
-        var helpMenu: MenuManager = new MenuManager("&Help", IWorkbenchActionConstants.M_HELP);
-        
-        menuBar.add(fileMenu);
-        // Add a group marker indicating where action set menus will appear.
-        menuBar.add(new GroupMarker(IWorkbenchActionConstants.MB_ADDITIONS));
-        menuBar.add(helpMenu);
-        
-        // File
-        fileMenu.add(newWindowAction);
-        fileMenu.add(new Separator());
-        fileMenu.add(messagePopupAction);
-        fileMenu.add(openViewAction);
-        fileMenu.add(new Separator());
-        fileMenu.add(exitAction);
-        
-        // Help
-        helpMenu.add(aboutAction);
-      */
   }
     
   protected override def fillCoolBar(coolBar: ICoolBarManager): Unit = {

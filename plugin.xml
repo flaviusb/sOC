@@ -58,29 +58,28 @@
          point="org.eclipse.ui.bindings">
       <key
             commandId="sOC.open"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            schemeId="sOC.scheme"
             sequence="CTRL+2">
       </key>
       <key
-            commandId="sOC.openMessage"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="CTRL+3">
-      </key>
-      <key
             commandId="org.eclipse.ui.file.exit"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            schemeId="sOC.scheme"
             sequence="CTRL+X">
       </key>
+      <scheme
+            id="sOC.scheme"
+            name="sOC.scheme">
+      </scheme>
    </extension> 
    <extension
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
             application="sOC.application"
-            name="RCP Product">
+            name="sOC">
          <property
                name="aboutText"
-               value="RCP Mail template created by PDE">
+               value="Some text about the Scala OpenCell port">
          </property>
          <property
                name="windowImages"
@@ -89,6 +88,18 @@
          <property
                name="aboutImage"
                value="product_lg.gif">
+         </property>
+         <property
+               name="appName"
+               value="sOC">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
          </property>
       </product>
    </extension>
