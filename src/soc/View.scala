@@ -14,27 +14,26 @@ import org.eclipse.swt.widgets.Link;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.part.ViewPart;
 
-public class View extends ViewPart {
+class View extends ViewPart {
+  def createPartControl(parent: Composite): Unit = {
+    var top: Composite = new Composite(parent, SWT.NONE)
+    var layout: GridLayout = new GridLayout()
+    layout.marginHeight = 0;
+    layout.marginWidth = 0;
+    top.setLayout(layout);
 
-	public static final String ID = "sOC.view";
-	
-	public void createPartControl(Composite parent) {
-		Composite top = new Composite(parent, SWT.NONE);
-		GridLayout layout = new GridLayout();
-		layout.marginHeight = 0;
-		layout.marginWidth = 0;
-		top.setLayout(layout);
-		// top banner
-		Composite banner = new Composite(top, SWT.NONE);
-		banner.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL, GridData.VERTICAL_ALIGN_BEGINNING, true, false));
-		layout = new GridLayout();
-		layout.marginHeight = 5;
-		layout.marginWidth = 10;
-		layout.numColumns = 2;
-		banner.setLayout(layout);
+    /*
+    // top banner
+    var banner: Composite = new Composite(top, SWT.NONE);
+    banner.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL, GridData.VERTICAL_ALIGN_BEGINNING, true, false));
+    layout = new GridLayout();
+    layout.marginHeight = 5;
+    layout.marginWidth = 10;
+    layout.numColumns = 2;
+    banner.setLayout(layout);
 		
-		// setup bold font
-		Font boldFont = JFaceResources.getFontRegistry().getBold(JFaceResources.DEFAULT_FONT);    
+    // setup bold font
+    var boldFont: Font = JFaceResources.getFontRegistry().getBold(JFaceResources.DEFAULT_FONT);    
 		
 		Label l = new Label(banner, SWT.WRAP);
 		l.setText("Subject:");
@@ -69,9 +68,9 @@ public class View extends ViewPart {
 						"- perspectives with placeholders for new views\n"+
 						"- use the default about dialog\n"+
 						"- create a product definition\n");
-		text.setLayoutData(new GridData(GridData.FILL_BOTH));
-	}
+		text.setLayoutData(new GridData(GridData.FILL_BOTH));*/
+  }
 
-	public void setFocus() {
-	}
+  def setFocus(): Unit = {
+  }
 }
