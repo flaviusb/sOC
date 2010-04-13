@@ -13,7 +13,7 @@
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            name="RCP Perspective"
+            name="Standard Scala OpenCell Perspective"
             class="soc.Perspective"
             id="sOC.perspective">
       </perspective>
@@ -26,13 +26,6 @@
             icon="icons/sample2.gif"
             class="soc.View"
             id="sOC.view">
-      </view>
-      <view
-            name="Mailboxes"
-            allowMultiple="true"
-            icon="icons/sample3.gif"
-            class="soc.NavigationView"
-            id="sOC.navigationView">
       </view>
    </extension>
    <extension
