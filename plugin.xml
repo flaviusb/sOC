@@ -21,11 +21,39 @@
    <extension
          point="org.eclipse.ui.views">
       <view
-            name="Message"
+            name="XML View"
             allowMultiple="true"
-            icon="icons/sample2.gif"
+            icon="icons/xml.png"
             class="soc.View"
-            id="sOC.view">
+            id="sOC.xml.view">
+      </view>
+      <view
+            allowMultiple="true"
+            class="soc.View"
+            icon="icons/xml.png"
+            id="sOC.text.view"
+            name="Text View">
+      </view>
+      <view
+            allowMultiple="true"
+            class="soc.View"
+            icon="icons/xml.png"
+            id="sOC.tree.view"
+            name="Tree View">
+      </view>
+      <view
+            allowMultiple="true"
+            class="soc.View"
+            icon="icons/xml.png"
+            id="sOC.model_list"
+            name="Model list">
+      </view>
+      <view
+            allowMultiple="true"
+            class="soc.View"
+            icon="icons/xml.png"
+            id="sOC.repository_explorer"
+            name="Repository Explorer">
       </view>
    </extension>
    <extension
@@ -76,7 +104,7 @@
          </property>
          <property
                name="windowImages"
-               value="icons/sample2.gif">
+               value="icons/opencell16.png">
          </property>
          <property
                name="aboutImage"

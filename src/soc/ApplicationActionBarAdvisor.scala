@@ -60,6 +60,13 @@ class ApplicationActionBarAdvisor(configurer: IActionBarConfigurer) extends Acti
 
      MB(menuBar,
       MI1("File", IWorkbenchActionConstants.M_FILE,
+        MI1("New", Nil) ::
+        MI1("Open...", Nil)::
+        MI1("Save", Nil) ::
+        MI1("Save As...", Nil) ::
+        MI1("Save All", Nil) ::
+        MI1("Close", Nil) ::
+        MI1("Close All", Nil) ::
         MI1(exitAction)
       ) ::
        MI1("Edit", IWorkbenchActionConstants.M_EDIT,
@@ -74,7 +81,17 @@ class ApplicationActionBarAdvisor(configurer: IActionBarConfigurer) extends Acti
       MI1("Tools",
         MI1("Language", 
           MI1("English", Unit => { TranslationData.currlang = "en"; TranslationData.callcallbacks }, Nil) ::
-          MI1("French" , Unit => { TranslationData.currlang = "fr"; TranslationData.callcallbacks } , Nil))) ::
+          MI1("French" , Unit => { TranslationData.currlang = "fr"; TranslationData.callcallbacks } , Nil)
+        )::
+        MI1("Export To", 
+          MI1("C...", Nil) ::
+          MI1("C++...", Nil) ::
+          MI1("Delphi for Win32...", Nil) ::
+          MI1("Fortran 77...", Nil) ::
+          MI1("Java...", Nil) ::
+          MI1("MATLAB...", Nil)
+        )
+      ) ::
       MI1("Help", IWorkbenchActionConstants.M_HELP, MI1(aboutAction))
       ) 
   }
