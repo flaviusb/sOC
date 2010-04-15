@@ -1,5 +1,5 @@
-This is a mockup of OpenCell/YAPE/whatever in Scala. It is just a proof of concept, to compare agaainst the actual XUL codebase and a Qt/C++ mockup.
+This is a mockup of OpenCell/YAPE/whatever in Scala. It is just a proof of concept, to compare against the actual XUL codebase and a Qt/C++ mockup.
 
 This is an Eclipse project; it can also be built with just a scala compiler, but that would require significant effort.
 
-It depends on SWT and JFace.
+It depends on SWT, JFace and JEuclid.
