@@ -1,5 +1,6 @@
 package soc;
 
+
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.ui.IWorkbenchPage;
@@ -23,7 +24,7 @@ public class OpenViewAction extends Action {
 		setActionDefinitionId(ICommandIds.CMD_OPEN);
 		setImageDescriptor(ActivatorStatic.getImageDescriptor("/icons/sample2.gif"));
 	}
-    
+
 	public void run() {
 		if(window != null) {	
 			try {

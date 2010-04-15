@@ -1,5 +1,6 @@
 package soc
 
+
 object ViewStatic {
   def ID1(): String = "sOC.xml.view";  
   def ID2(): String = "sOC.text.view";  

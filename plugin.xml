@@ -4,7 +4,10 @@
    <extension
          id="application"
          point="org.eclipse.core.runtime.applications">
-      <application>
+      <application
+            cardinality="singleton-scoped"
+            icon="icons/opencell16.png"
+            visible="true">
          <run
                class="soc.Application">
          </run>

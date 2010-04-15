@@ -14,7 +14,6 @@ public class Perspective implements IPerspectiveFactory {
 	public void createInitialLayout(IPageLayout layout) {
 		String editorArea = layout.getEditorArea();
 		layout.setEditorAreaVisible(false);
-		
 		//layout.addStandaloneView(NavigationView.ID,  false, IPageLayout.LEFT, 0.25f, editorArea);
 		IFolderLayout renderedview = layout.createFolder("renderedview", IPageLayout.TOP, 0.25f, editorArea);
 		renderedview.addPlaceholder(ViewStatic.RENDEREDVIEW());
@@ -28,7 +27,5 @@ public class Perspective implements IPerspectiveFactory {
 		IFolderLayout folder3 = layout.createFolder("messages3", IPageLayout.TOP, 0.33f, editorArea);
 		folder3.addPlaceholder(ViewStatic.ID3());
 		folder3.addView(ViewStatic.ID3() + ":0");
-
-		//layout.getViewLayout(NavigationView.ID).setCloseable(false);
 	}
 }

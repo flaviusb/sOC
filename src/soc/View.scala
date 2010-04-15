@@ -21,7 +21,6 @@ class View extends ViewPart {
     layout.marginHeight = 0;
     layout.marginWidth = 0;
     top.setLayout(layout);
-
     /*
     // top banner
     var banner: Composite = new Composite(top, SWT.NONE);

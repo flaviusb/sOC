@@ -6,7 +6,11 @@ Bundle-Version: 0.0.1
 Bundle-Activator: soc.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- scala.library;visibility:=reexport
+ scala.library
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Import-Package: net.sourceforge.jeuclid.swt
+Import-Package: net.sourceforge.jeuclid.parser,
+ net.sourceforge.jeuclid.swt,
+ net.sourceforge.jeuclid,
+ net.sourceforge.jeuclid.context,
+ net.sourceforge.jeuclid.elements.generic

@@ -18,7 +18,7 @@ public class MessagePopupAction extends Action {
         setActionDefinitionId(ICommandIds.CMD_OPEN_MESSAGE);
         setImageDescriptor(soc.ActivatorStatic.getImageDescriptor("/icons/sample3.gif"));
     }
-
+ 
     public void run() {
         MessageDialog.openInformation(window.getShell(), "Open", "Open Message Dialog!");
     }
