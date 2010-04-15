@@ -9,4 +9,4 @@ Require-Bundle: org.eclipse.ui,
  scala.library;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: soc
+Import-Package: net.sourceforge.jeuclid.swt

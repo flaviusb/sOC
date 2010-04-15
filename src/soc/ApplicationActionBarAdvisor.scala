@@ -50,7 +50,7 @@ class ApplicationActionBarAdvisor(configurer: IActionBarConfigurer) extends Acti
     newWindowAction = ActionFactory.OPEN_NEW_WINDOW.create(window);
     register(newWindowAction);
     
-    openViewAction = new OpenViewAction(window, "Open Another Message View", ViewStatic.ID);
+    openViewAction = new OpenViewAction(window, "Open Another Message View", ViewStatic.ID1());
     register(openViewAction);
     
     messagePopupAction = new MessagePopupAction("Open Message", window);

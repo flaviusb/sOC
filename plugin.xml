@@ -30,7 +30,7 @@
       <view
             allowMultiple="true"
             class="soc.View"
-            icon="icons/xml.png"
+            icon="icons/text.png"
             id="sOC.text.view"
             name="Text View">
       </view>
@@ -44,7 +44,7 @@
       <view
             allowMultiple="true"
             class="soc.View"
-            icon="icons/xml.png"
+            icon="icons/opencell16.png"
             id="sOC.model_list"
             name="Model list">
       </view>
@@ -54,6 +54,12 @@
             icon="icons/xml.png"
             id="sOC.repository_explorer"
             name="Repository Explorer">
+      </view>
+      <view
+            allowMultiple="true"
+            class="soc.RenderedView"
+            id="sOC.rendered_view"
+            name="Rendered View">
       </view>
    </extension>
    <extension
