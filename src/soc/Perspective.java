@@ -1,5 +1,6 @@
 package soc;
 
+import org.eclipse.core.runtime.Path;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
@@ -34,5 +35,8 @@ public class Perspective implements IPerspectiveFactory {
 		IFolderLayout folder3 = layout.createFolder("messages3", IPageLayout.TOP, 0.33f, editorArea);
 		folder3.addPlaceholder(ViewStatic.ID3());
 		folder3.addView(ViewStatic.ID3() + ":0");
+		//FileEditorInput foo = new FileEditorInput()
+		
+		//IFile foo = new File(new Path("src"), 
 	}
 }

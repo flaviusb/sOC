@@ -1,5 +1,6 @@
 package soc;
 
+import org.eclipse.core.filesystem._
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.GroupMarker;
 import org.eclipse.jface.action.ICoolBarManager;
@@ -19,6 +20,15 @@ import org.eclipse.ui.application.IActionBarConfigurer;
 import org.eclipse.ui.editors._
 import org.eclipse.ui._
 import org.eclipse.ui.internal.part.NullEditorInput
+import org.eclipse.swt.widgets._
+import org.eclipse.ui.part.FileEditorInput;
+import java.io.File;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.ide._
+
+
 
 /**
  * An action bar advisor is responsible for creating, adding, and disposing of the
@@ -36,6 +46,7 @@ class ApplicationActionBarAdvisor(configurer: IActionBarConfigurer) extends Acti
   private var newWindowAction: IWorkbenchAction = _;
   private var openViewAction: OpenViewAction = _;
   private var messagePopupAction: Action = _;
+  private var newEditor: IWorkbenchAction = _;
   
   protected override def makeActions(window: IWorkbenchWindow) = {
 	
@@ -54,6 +65,9 @@ class ApplicationActionBarAdvisor(configurer: IActionBarConfigurer) extends Acti
     newWindowAction = ActionFactory.OPEN_NEW_WINDOW.create(window);
     register(newWindowAction);
     
+    newEditor = ActionFactory.NEW_EDITOR.create(window);
+    register(newEditor)
+    
     openViewAction = new OpenViewAction(window, "Open Another Message View", ViewStatic.ID1());
     register(openViewAction);
     
@@ -67,7 +81,16 @@ class ApplicationActionBarAdvisor(configurer: IActionBarConfigurer) extends Acti
      MB(menuBar,
       MI1("File", IWorkbenchActionConstants.M_FILE,
         MI1("New", Unit =>  PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().openEditor(new FakeEditorInput(),"soc.editors.XMLEditor"), Nil) ::
-        MI1("Open...", Nil)::
+        MI1(newEditor)::
+        MI1("Open...", Unit => {
+          var dlg = new FileDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), SWT.OPEN)
+          var file: File = new File(dlg.open())
+          var fileStore: IFileStore = EFS.getLocalFileSystem().getStore(file.toURI());
+          var page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+          var ei = new FileStoreEditorInput(fileStore)
+          
+          IDE.openEditor( page, ei, "soc.editors.XMLEditor");
+        }, Nil)::
         MI1("Save", Nil) ::
         MI1("Save As...", Nil) ::
         MI1("Save All", Nil) ::
