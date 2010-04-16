@@ -17,5 +17,6 @@ class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
   override def initialize(configurer: IWorkbenchConfigurer): Unit = {
     super.initialize(configurer)
     configurer.setSaveAndRestore(true)
+    //configurer.getWorkbench().getActiveWorkbenchWindow().getActivePage().openEditor(x$1, x$2)
   }
 }

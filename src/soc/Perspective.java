@@ -1,8 +1,14 @@
 package soc;
 
+import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
+
 
 public class Perspective implements IPerspectiveFactory {
 
@@ -13,7 +19,8 @@ public class Perspective implements IPerspectiveFactory {
 
 	public void createInitialLayout(IPageLayout layout) {
 		String editorArea = layout.getEditorArea();
-		layout.setEditorAreaVisible(false);
+		layout.setEditorAreaVisible(true);
+		
 		//layout.addStandaloneView(NavigationView.ID,  false, IPageLayout.LEFT, 0.25f, editorArea);
 		IFolderLayout renderedview = layout.createFolder("renderedview", IPageLayout.TOP, 0.25f, editorArea);
 		renderedview.addPlaceholder(ViewStatic.RENDEREDVIEW());

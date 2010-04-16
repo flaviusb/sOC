@@ -16,6 +16,9 @@ import org.eclipse.ui.actions.ActionFactory;
 import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
+import org.eclipse.ui.editors._
+import org.eclipse.ui._
+import org.eclipse.ui.internal.part.NullEditorInput
 
 /**
  * An action bar advisor is responsible for creating, adding, and disposing of the
@@ -35,6 +38,7 @@ class ApplicationActionBarAdvisor(configurer: IActionBarConfigurer) extends Acti
   private var messagePopupAction: Action = _;
   
   protected override def makeActions(window: IWorkbenchWindow) = {
+	
     // Creates the actions and registers them.
     // Registering is needed to ensure that key bindings work.
     // The corresponding commands keybindings are defined in the plugin.xml file.
@@ -55,12 +59,14 @@ class ApplicationActionBarAdvisor(configurer: IActionBarConfigurer) extends Acti
     
     messagePopupAction = new MessagePopupAction("Open Message", window);
     register(messagePopupAction);
+    //var foo: IEditorInput = new NullEditorInput()
+    //window.getActivePage().openEditor(foo, "soc.editors.XMLEditor")
   }
   protected override def fillMenuBar(menuBar: IMenuManager) = {
 
      MB(menuBar,
       MI1("File", IWorkbenchActionConstants.M_FILE,
-        MI1("New", Nil) ::
+        MI1("New", Unit =>  PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().openEditor(new FakeEditorInput(),"soc.editors.XMLEditor"), Nil) ::
         MI1("Open...", Nil)::
         MI1("Save", Nil) ::
         MI1("Save As...", Nil) ::

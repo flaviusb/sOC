@@ -133,5 +133,25 @@
          </property>
       </product>
    </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.eclipse.ui.part.MultiPageEditor"
+            contributorClass="org.eclipse.ui.part.MultiPageEditorActionBarContributor"
+            default="true"
+            icon="icons/text.png"
+            id="sOC.texteditor"
+            launcher="org.eclipse.ui.IEditorLauncher"
+            name="Text Editor">
+      </editor>
+      <editor
+            class="soc.editors.XMLEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="xml"
+            icon="icons/xml.png"
+            id="soc.editors.XMLEditor"
+            name="Sample XML Editor">
+      </editor>
+   </extension>
 
 </plugin>

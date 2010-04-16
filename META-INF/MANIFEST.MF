@@ -6,7 +6,9 @@ Bundle-Version: 0.0.1
 Bundle-Activator: soc.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- scala.library
+ scala.library,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: net.sourceforge.jeuclid.parser,
