@@ -7,4 +7,5 @@ object ViewStatic {
   def ID3(): String = "sOC.tree.view";  
   def ID4(): String = "sOC.model_list";  
   def RENDEREDVIEW(): String = "sOC.rendered_view";  
+  def GRAPHVIEW(): String = "sOC.graph_view";  
 }

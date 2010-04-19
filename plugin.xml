@@ -65,6 +65,14 @@
             id="sOC.rendered_view"
             name="Rendered View">
       </view>
+      <view
+            allowMultiple="true"
+            class="soc.GraphView"
+            icon="icons/axes.png"
+            id="sOC.graph_view"
+            name="Graph View"
+            restorable="true">
+      </view>
    </extension>
    <extension
          point="org.eclipse.ui.commands">

@@ -26,7 +26,10 @@ public class Perspective implements IPerspectiveFactory {
 		IFolderLayout renderedview = layout.createFolder("renderedview", IPageLayout.TOP, 0.25f, editorArea);
 		renderedview.addPlaceholder(ViewStatic.RENDEREDVIEW());
 		renderedview.addView(ViewStatic.RENDEREDVIEW() + ":0");
-		IFolderLayout folder = layout.createFolder("messages", IPageLayout.LEFT, 0.33f, editorArea);
+    IFolderLayout graphview = layout.createFolder("graphview", IPageLayout.RIGHT, 0.25f, editorArea);
+    graphview.addPlaceholder(ViewStatic.GRAPHVIEW());
+    graphview.addView(ViewStatic.GRAPHVIEW() + ":0");
+    IFolderLayout folder = layout.createFolder("messages", IPageLayout.LEFT, 0.33f, editorArea);
 		folder.addPlaceholder(ViewStatic.ID1());
 		folder.addView(ViewStatic.ID1() + ":0");
 		IFolderLayout folder2 = layout.createFolder("messages2", IPageLayout.RIGHT, 0.33f, editorArea);
