@@ -2,4 +2,4 @@ This is a mockup of OpenCell/YAPE/whatever in Scala. It is just a proof of conce
 
 This is an Eclipse project; it can also be built with just a scala compiler, but that would require significant effort.
 
-It depends on SWT, JFace and JEuclid.
+It depends on SWT and JFace for the GUI toolkit, JEuclid for MathML rendering, and JFreeChart for graphing.
