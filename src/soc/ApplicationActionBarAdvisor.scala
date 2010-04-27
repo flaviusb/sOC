@@ -26,8 +26,8 @@ import java.io.File;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.ide._
-
+import org.eclipse.ui.ide.IDE
+import org.eclipse.ui.ide.FileStoreEditorInput
 
 
 /**
@@ -86,10 +86,10 @@ class ApplicationActionBarAdvisor(configurer: IActionBarConfigurer) extends Acti
           var dlg = new FileDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), SWT.OPEN)
           var file: File = new File(dlg.open())
           var fileStore: IFileStore = EFS.getLocalFileSystem().getStore(file.toURI());
-          var page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-          var ei = new FileStoreEditorInput(fileStore)
+          var page: IWorkbenchPage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+          var ei: IEditorInput = new FileStoreEditorInput(fileStore)
           
-          IDE.openEditor( page, ei, "soc.editors.XMLEditor");
+          page.openEditor(ei, "soc.editors.XMLEditor");
         }, Nil)::
         MI1("Save", Nil) ::
         MI1("Save As...", Nil) ::
