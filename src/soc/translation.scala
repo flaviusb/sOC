@@ -5,7 +5,7 @@ import scala.collection.mutable.{Map => MMap}
 object TranslationData {
   implicit def tup2map(a: (String, Seq[(String, String)])*) : MMap[String, MMap[String, String]] = {
     var res = MMap[String, MMap[String, String]]()
-    for(index <- a.elements) res ++ MMap(index._1 -> MMap(index._2: _*))
+    for(index <- a.elements) res = res ++ MMap(index._1 -> MMap(index._2: _*))
     res
   }
   var translations : MMap[String, MMap[String, String]] = 
